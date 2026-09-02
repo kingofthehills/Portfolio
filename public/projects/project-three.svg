@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0b0f"/>
+      <stop offset="55%" stop-color="#1c1420"/>
+      <stop offset="100%" stop-color="#301a3a"/>
+    </linearGradient>
+    <linearGradient id="glow3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4d7fff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#35e7b7" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g3)"/>
+  <rect width="1200" height="800" fill="url(#grid3)"/>
+  <circle cx="600" cy="400" r="380" fill="url(#glow3)"/>
+  <g opacity="0.9">
+    <rect x="140" y="150" width="920" height="520" rx="16" fill="#0d0f16" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="140" y="150" width="920" height="46" rx="16" fill="#12141c"/>
+    <circle cx="172" cy="173" r="6" fill="#ff5f57"/>
+    <circle cx="194" cy="173" r="6" fill="#febc2e"/>
+    <circle cx="216" cy="173" r="6" fill="#28c840"/>
+    <rect x="190" y="230" width="920" height="0" />
+    <rect x="190" y="230" width="290" height="150" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
+    <rect x="500" y="230" width="290" height="150" rx="10" fill="#4d7fff" fill-opacity="0.12" stroke="#4d7fff" stroke-opacity="0.35"/>
+    <rect x="810" y="230" width="240" height="150" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
+    <rect x="190" y="400" width="860" height="210" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+  </g>
+  <text x="600" y="760" text-anchor="middle" font-family="monospace" font-size="20" fill="#ffffff" fill-opacity="0.35">[Project Three — replace with a real screenshot]</text>
+</svg>
