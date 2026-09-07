@@ -82,15 +82,17 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
           >
             <GithubIcon size={15} /> Source
           </a>
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="LIVE"
-            className="link-underline inline-flex items-center gap-1.5 text-sm text-ink"
-          >
-            Live Demo <ArrowUpRight size={14} />
-          </a>
+          {project.live ? (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="LIVE"
+              className="link-underline inline-flex items-center gap-1.5 text-sm text-ink"
+            >
+              Live Demo <ArrowUpRight size={14} />
+            </a>
+          ) : null}
         </div>
       </div>
     </motion.div>

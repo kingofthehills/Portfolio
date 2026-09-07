@@ -114,14 +114,16 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             >
               <GithubIcon size={15} /> View Source
             </a>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm text-bg"
-            >
-              Live Demo <ArrowUpRight size={15} />
-            </a>
+            {project.live ? (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm text-bg"
+              >
+                Live Demo <ArrowUpRight size={15} />
+              </a>
+            ) : null}
           </div>
         </div>
       </motion.div>

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, Loader2, Mail, XCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Loader2, Mail, Phone, XCircle } from 'lucide-react'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { GithubIcon, LinkedinIcon } from '@/components/icons/BrandIcons'
@@ -68,6 +68,9 @@ export function Contact() {
           <div className="mt-8 space-y-4">
             <a href={`mailto:${social.email}`} data-cursor="EMAIL" className="link-underline flex items-center gap-3 text-sm text-ink">
               <Mail size={16} /> {social.email}
+            </a>
+            <a href={`tel:${social.phone.replace(/[^+\d]/g, '')}`} data-cursor="CALL" className="link-underline flex items-center gap-3 text-sm text-ink">
+              <Phone size={16} /> {social.phone}
             </a>
             <a href={social.github} target="_blank" rel="noopener noreferrer" data-cursor="OPEN" className="link-underline flex items-center gap-3 text-sm text-ink">
               <GithubIcon size={16} /> GitHub
