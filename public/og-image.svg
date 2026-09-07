@@ -18,7 +18,7 @@
   <circle cx="880" cy="180" r="340" fill="url(#glow)"/>
   <circle cx="900" cy="220" r="90" fill="none" stroke="#4d7fff" stroke-opacity="0.5" stroke-width="1.5"/>
   <circle cx="900" cy="220" r="140" fill="none" stroke="#35e7b7" stroke-opacity="0.25" stroke-width="1.5"/>
-  <text x="90" y="290" font-family="'Space Grotesk', system-ui, sans-serif" font-size="64" fill="#f5f5f7" font-weight="600">[YOUR NAME]</text>
-  <text x="90" y="340" font-family="system-ui, sans-serif" font-size="28" fill="#9aa0ac">Full-Stack Developer &amp; Creative Technologist</text>
+  <text x="90" y="290" font-family="'Space Grotesk', system-ui, sans-serif" font-size="64" fill="#f5f5f7" font-weight="600">Kishore Nidamanuri</text>
+  <text x="90" y="340" font-family="system-ui, sans-serif" font-size="28" fill="#9aa0ac">Full Stack Developer</text>
   <text x="90" y="400" font-family="ui-monospace, monospace" font-size="16" fill="#4d7fff" letter-spacing="2">BUILDING FAST, INTERACTIVE, PRODUCT-GRADE EXPERIENCES</text>
 </svg>

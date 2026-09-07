@@ -1,8 +1,9 @@
 export const social = {
-  email: 'your.email@example.com',
-  github: 'https://github.com/your-username',
-  linkedin: 'https://linkedin.com/in/your-username',
-  twitter: 'https://x.com/your-username',
+  email: 'nidamanurikishore47@gmail.com',
+  phone: '+91 79897-31595',
+  github: 'https://github.com/kingofthehills',
+  linkedin: 'https://linkedin.com/in/kishore-nidamanuri',
+  twitter: '',
   instagram: '',
 } as const
 
