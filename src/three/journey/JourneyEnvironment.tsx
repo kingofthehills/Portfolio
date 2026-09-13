@@ -7,19 +7,19 @@ import type { Theme } from '@/hooks/useTheme'
 
 const THEME_PALETTES: Record<Theme, { background: string; sectionTints: string[]; dust: string; gridMajor: string; gridMinor: string; keyLight: string }> = {
   dark: {
-    background: '#050608',
-    sectionTints: ['#1c2a52', '#173066', '#12335a', '#1c2a52', '#122a4a'],
-    dust: '#8fb3ff',
-    gridMajor: '#233056',
-    gridMinor: '#0d1220',
-    keyLight: '#e8edff',
+    background: '#060609',
+    sectionTints: ['#2b2050', '#241a44', '#1e1640', '#2b2050', '#1a1338'],
+    dust: '#c3b3ff',
+    gridMajor: '#33245c',
+    gridMinor: '#170f26',
+    keyLight: '#efe9ff',
   },
   light: {
-    background: '#eef1f6',
-    sectionTints: ['#c8d6ef', '#c3e4de', '#c9d9ee', '#c8d6ef', '#c3d8e8'],
-    dust: '#4d7fff',
-    gridMajor: '#c3cede',
-    gridMinor: '#dbe1ec',
+    background: '#f4f1fb',
+    sectionTints: ['#dcd0f5', '#f3ddac', '#ded3f4', '#dcd0f5', '#f0dcae'],
+    dust: '#8a6cff',
+    gridMajor: '#d9cdf0',
+    gridMinor: '#efe7f8',
     keyLight: '#ffffff',
   },
 }

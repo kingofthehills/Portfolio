@@ -37,10 +37,15 @@ export default {
           from: { opacity: 0, transform: 'translateY(16px)' },
           to: { opacity: 1, transform: 'translateY(0)' },
         },
+        shine: {
+          '0%': { backgroundPosition: '150% 0' },
+          '100%': { backgroundPosition: '-150% 0' },
+        },
       },
       animation: {
         marquee: 'marquee 30s linear infinite',
         blink: 'blink 1s step-start infinite',
+        shine: 'shine 5s linear infinite',
       },
       transitionTimingFunction: {
         premium: 'cubic-bezier(0.16, 1, 0.3, 1)',

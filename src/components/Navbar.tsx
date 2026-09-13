@@ -2,19 +2,15 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-
 import { FileText, Menu, X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { MagneticButton } from '@/components/MagneticButton'
-import { ThemeToggle } from '@/components/ThemeToggle'
 import { navItems } from '@/data/navigation'
 import { personal } from '@/data/personal'
-import type { Theme } from '@/hooks/useTheme'
 
 interface NavbarProps {
   activeSection: string
-  theme: Theme
-  onToggleTheme: () => void
   onOpenPalette: () => void
 }
 
-export function Navbar({ activeSection, theme, onToggleTheme, onOpenPalette }: NavbarProps) {
+export function Navbar({ activeSection, onOpenPalette }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const logoClicks = useRef(0)
@@ -30,7 +26,7 @@ export function Navbar({ activeSection, theme, onToggleTheme, onOpenPalette }: N
       logoClicks.current = 0
       console.log(
         '%cStill here? Respect.',
-        'font-size:16px;font-weight:700;color:#35e7b7;',
+        'font-size:16px;font-weight:700;color:#fab044;',
         `\n${personal.name} — ${personal.role}\nReach out any time: check the contact section.`,
       )
     }
@@ -55,10 +51,10 @@ export function Navbar({ activeSection, theme, onToggleTheme, onOpenPalette }: N
             type="button"
             onClick={handleLogoClick}
             data-cursor="HI"
-            className="font-display text-sm font-semibold tracking-tight text-ink"
+            className="flex items-center"
             aria-label="Logo — click for a surprise"
           >
-            {personal.initials}
+            <img src="/logo.png" alt={personal.name} className="h-8 w-auto" />
           </button>
 
           <ul className="hidden items-center gap-1 md:flex">
@@ -93,7 +89,6 @@ export function Navbar({ activeSection, theme, onToggleTheme, onOpenPalette }: N
             >
               <span>⌘</span>K
             </button>
-            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
             <MagneticButton
               href={personal.resumeUrl}
               target="_blank"
@@ -135,7 +130,7 @@ function MobileMenu({ activeSection, onClose }: { activeSection: string; onClose
       className="fixed inset-0 z-[90] flex flex-col bg-bg/98 backdrop-blur-xl md:hidden"
     >
       <div className="flex items-center justify-between px-6 pt-6">
-        <span className="font-display text-sm font-semibold text-ink">{personal.initials}</span>
+        <img src="/logo.png" alt={personal.name} className="h-7 w-auto" />
         <button
           type="button"
           onClick={onClose}

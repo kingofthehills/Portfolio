@@ -1,7 +1,13 @@
 import { useFrame } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import { getApertureAngle, getCoreEmissiveIntensity, getCoreScale, getEnergyMix } from '@/animations/objectAnimations'
+import {
+  getApertureAngle,
+  getCoreEmissiveIntensity,
+  getCoreScale,
+  getEnergyMix,
+  MAX_APERTURE_ANGLE,
+} from '@/animations/objectAnimations'
 import { mapScrollToScene } from '@/animations/scrollTimeline'
 import { cinematicProgress } from '@/three/utils/scrollStore'
 import { energyColor } from '@/three/utils/palette'
@@ -33,8 +39,9 @@ function ShellPetal({ index }: { index: number }) {
 
     if (materialRef.current) {
       const mix = getEnergyMix(scene)
-      materialRef.current.emissive.copy(energyColor(mix))
-      materialRef.current.emissiveIntensity = 0.25 + mix * 0.9
+      const openAmount = angle / MAX_APERTURE_ANGLE
+      materialRef.current.emissive.copy(energyColor(Math.max(mix, openAmount * 0.7)))
+      materialRef.current.emissiveIntensity = 0.25 + openAmount * 0.6 + mix * 0.9
     }
   })
 
@@ -43,12 +50,12 @@ function ShellPetal({ index }: { index: number }) {
       <mesh geometry={geometry}>
         <meshPhysicalMaterial
           ref={materialRef}
-          color="#0d1424"
+          color="#150f24"
           metalness={0.6}
           roughness={0.4}
           clearcoat={0.3}
           clearcoatRoughness={0.4}
-          emissive="#1c2a52"
+          emissive="#2b2050"
           emissiveIntensity={0.25}
           side={THREE.DoubleSide}
         />
@@ -88,7 +95,7 @@ function InnerCore() {
     <group>
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[0.55, 3]} />
-        <meshStandardMaterial ref={materialRef} color="#0a0e18" emissive="#1c2a52" roughness={0.2} metalness={0.3} />
+        <meshStandardMaterial ref={materialRef} color="#0f0b1a" emissive="#2b2050" roughness={0.2} metalness={0.3} />
       </mesh>
       <pointLight ref={lightRef} distance={5} decay={2} />
     </group>

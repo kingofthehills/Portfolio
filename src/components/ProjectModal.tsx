@@ -30,6 +30,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener('keydown', handleKey)
   }, [onClose])
 
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

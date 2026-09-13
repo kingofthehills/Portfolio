@@ -45,9 +45,12 @@ export function Contact() {
 
     setStatus('loading')
     try {
-      // NOTE: no backend is wired up yet. Connect this to an email service
-      // (Formspree, Resend, EmailJS, or your own API route) to receive real messages.
-      await new Promise((resolve) => setTimeout(resolve, 1200))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!response.ok) throw new Error('Request failed')
       setStatus('success')
       setForm({ name: '', email: '', message: '' })
     } catch {
@@ -56,8 +59,18 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-16">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+    <section id="contact" className="relative bg-bg py-28">
+      {/* A static warm glow instead of the animated shader used on the
+          Projects/Open Source sections — a plain radial gradient reads
+          as a photo-lit backdrop without pulling in WebGL for a section
+          that doesn't need the motion. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{ background: 'radial-gradient(700px circle at 50% 0%, rgb(var(--accent-2) / 0.16), transparent 70%)' }}
+      />
+
+      <div className="relative z-10 mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 sm:px-10 lg:grid-cols-12 lg:px-16">
         <div className="lg:col-span-5">
           <SectionHeading eyebrow="Contact" title="Let's build something great." />
           <p className="mt-6 max-w-md text-balance leading-relaxed text-muted">
@@ -186,10 +199,6 @@ export function Contact() {
               ) : null}
             </AnimatePresence>
           </div>
-          <p className="mt-4 text-xs text-faint">
-            This form currently simulates a submission. Wire it to an email service (Formspree, Resend, EmailJS) or
-            your own API route to receive real messages.
-          </p>
         </form>
       </div>
     </section>

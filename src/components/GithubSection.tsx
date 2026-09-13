@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { GithubIcon } from '@/components/icons/BrandIcons'
 import { SectionHeading } from '@/components/SectionHeading'
 import { TiltCard } from '@/components/TiltCard'
+import { ShaderBackground } from '@/components/ui/shader-background'
 import { social } from '@/data/social'
 
 interface GithubProfile {
@@ -67,76 +68,84 @@ export function GithubSection() {
   }, [])
 
   return (
-    <section className="relative mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-16">
-      <SectionHeading
-        eyebrow="Open Source"
-        title="On GitHub."
-        description={isLive ? 'Live activity, pulled directly from the GitHub API.' : 'Sample activity — connect a real GitHub username to make this live.'}
-      />
+    <section className="relative py-28">
+      {/* z-0 (not negative), full-width shader with the max-width/padding
+          moved onto the content wrapper below — same pattern as the
+          Projects section, so the two feel like one continuous theme
+          rather than each section having its own one-off treatment. */}
+      <ShaderBackground className="pointer-events-none absolute inset-0 z-0" />
 
-      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col justify-between gap-6 rounded-2xl border border-border/30 bg-surface/40 p-6 lg:col-span-4"
-        >
-          <div className="flex items-center gap-3">
-            <GithubIcon size={20} className="text-ink" />
-            <span className="font-display text-lg text-ink">@{profile.login}</span>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="font-display text-2xl text-ink">{profile.public_repos}</div>
-              <div className="mt-1 text-xs uppercase tracking-wide text-muted">Repositories</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5 font-display text-2xl text-ink">
-                <Users size={16} className="text-accent2" /> {profile.followers}
-              </div>
-              <div className="mt-1 text-xs uppercase tracking-wide text-muted">Followers</div>
-            </div>
-          </div>
-          <a
-            href={social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="VISIT"
-            className="link-underline inline-flex w-fit items-center gap-1.5 text-sm text-ink"
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+        <SectionHeading
+          eyebrow="Open Source"
+          title="On GitHub."
+          description={isLive ? 'Live activity, pulled directly from the GitHub API.' : 'Sample activity — connect a real GitHub username to make this live.'}
+        />
+
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col justify-between gap-6 rounded-2xl border border-border/30 bg-surface/40 p-6 lg:col-span-4"
           >
-            View full profile ↗
-          </a>
-        </motion.div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
-          {repos.slice(0, 3).map((repo, index) => (
-            <motion.div
-              key={repo.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            <div className="flex items-center gap-3">
+              <GithubIcon size={20} className="text-ink" />
+              <span className="font-display text-lg text-ink">@{profile.login}</span>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <div className="font-display text-2xl text-ink">{profile.public_repos}</div>
+                <div className="mt-1 text-xs uppercase tracking-wide text-muted">Repositories</div>
+              </div>
+              <div>
+                <div className="flex items-center gap-1.5 font-display text-2xl text-ink">
+                  <Users size={16} className="text-accent2" /> {profile.followers}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-wide text-muted">Followers</div>
+              </div>
+            </div>
+            <a
+              href={social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="VISIT"
+              className="link-underline inline-flex w-fit items-center gap-1.5 text-sm text-ink"
             >
-              <TiltCard className="h-full rounded-2xl border border-border/30 bg-surface/40 p-5">
-                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="relative z-10 flex h-full flex-col justify-between gap-4">
-                  <div>
-                    <span className="font-mono text-sm text-ink">{repo.name}</span>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{repo.description ?? 'No description provided.'}</p>
-                  </div>
-                  <div className="flex items-center gap-4 text-xs text-faint">
-                    {repo.language ? <span>{repo.language}</span> : null}
-                    <span className="inline-flex items-center gap-1">
-                      <Star size={12} /> {repo.stargazers_count}
-                    </span>
-                    <span className="inline-flex items-center gap-1">
-                      <GitFork size={12} /> {repo.forks_count}
-                    </span>
-                  </div>
-                </a>
-              </TiltCard>
-            </motion.div>
-          ))}
+              View full profile ↗
+            </a>
+          </motion.div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
+            {repos.slice(0, 3).map((repo, index) => (
+              <motion.div
+                key={repo.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <TiltCard className="h-full rounded-2xl border border-border/30 bg-surface/40 p-5">
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="relative z-10 flex h-full flex-col justify-between gap-4">
+                    <div>
+                      <span className="font-mono text-sm text-ink">{repo.name}</span>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">{repo.description ?? 'No description provided.'}</p>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs text-faint">
+                      {repo.language ? <span>{repo.language}</span> : null}
+                      <span className="inline-flex items-center gap-1">
+                        <Star size={12} /> {repo.stargazers_count}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <GitFork size={12} /> {repo.forks_count}
+                      </span>
+                    </div>
+                  </a>
+                </TiltCard>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

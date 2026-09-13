@@ -24,8 +24,8 @@ function CentralObject() {
         <mesh ref={meshRef}>
           <icosahedronGeometry args={[1.15, 2]} />
           <MeshDistortMaterial
-            color="#4d7fff"
-            emissive="#173066"
+            color="#8a6cff"
+            emissive="#241a44"
             emissiveIntensity={0.6}
             roughness={0.15}
             metalness={0.4}
@@ -35,10 +35,10 @@ function CentralObject() {
         </mesh>
         <mesh ref={wireRef} scale={1.55}>
           <icosahedronGeometry args={[1, 1]} />
-          <meshBasicMaterial color="#35e7b7" wireframe transparent opacity={0.18} />
+          <meshBasicMaterial color="#fab044" wireframe transparent opacity={0.18} />
         </mesh>
       </Float>
-      <pointLight color="#4d7fff" intensity={18} distance={6} position={[0, 0, 0]} />
+      <pointLight color="#8a6cff" intensity={18} distance={6} position={[0, 0, 0]} />
     </group>
   )
 }
@@ -69,7 +69,7 @@ function ParticleField({ count }: { count: number }) {
     <Points ref={ref} positions={positions} stride={3} frustumCulled>
       <PointMaterial
         transparent
-        color="#8fb3ff"
+        color="#c3b3ff"
         size={0.02}
         sizeAttenuation
         depthWrite={false}
@@ -80,7 +80,7 @@ function ParticleField({ count }: { count: number }) {
 }
 
 function GridFloor() {
-  return <gridHelper args={[30, 30, '#2a3350', '#12151f']} position={[0, -2.4, 0]} />
+  return <gridHelper args={[30, 30, '#392a5e', '#170f22']} position={[0, -2.4, 0]} />
 }
 
 function CameraRig() {
@@ -100,12 +100,12 @@ function SceneContents({ particleCount }: { particleCount: number }) {
   return (
     <>
       <ambientLight intensity={0.35} />
-      <directionalLight position={[4, 4, 4]} intensity={0.7} color="#e8edff" />
+      <directionalLight position={[4, 4, 4]} intensity={0.7} color="#efe9ff" />
       <CentralObject />
       <ParticleField count={particleCount} />
       <GridFloor />
       <CameraRig />
-      <fog attach="fog" args={['#050608', 6, 13]} />
+      <fog attach="fog" args={['#060609', 6, 13]} />
     </>
   )
 }

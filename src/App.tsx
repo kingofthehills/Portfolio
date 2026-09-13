@@ -6,7 +6,6 @@ import { CinematicExperience } from '@/components/cinematic/CinematicExperience'
 import { SoundToggle } from '@/components/cinematic/SoundToggle'
 import { CommandPalette } from '@/components/CommandPalette'
 import { Contact } from '@/components/Contact'
-import { CustomCursor } from '@/components/CustomCursor'
 import { EasterEggs } from '@/components/EasterEggs'
 import { ExperienceTimeline } from '@/components/ExperienceTimeline'
 import { Footer } from '@/components/Footer'
@@ -20,10 +19,8 @@ import { TechStack } from '@/components/TechStack'
 import { navItems } from '@/data/navigation'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useAmbientSound } from '@/hooks/useAmbientSound'
-import { useJourneyScroll } from '@/hooks/useJourneyScroll'
 import { useMotionPreference } from '@/hooks/useMotionPreference'
 import { useTheme } from '@/hooks/useTheme'
-import { JourneyCanvas } from '@/three/journey/JourneyCanvas'
 
 const SECTION_IDS = navItems.map((item) => item.id)
 
@@ -34,7 +31,6 @@ function App() {
   const activeSection = useActiveSection(SECTION_IDS)
   const { reducedMotion, toggle: toggleMotion } = useMotionPreference()
   const { enabled: soundEnabled, toggle: toggleSound } = useAmbientSound()
-  useJourneyScroll()
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -53,28 +49,13 @@ function App() {
         {loading ? <LoadingScreen key="loader" onComplete={() => setLoading(false)} /> : null}
       </AnimatePresence>
 
-      {/* z-index 0 (not negative) — a negative z-index on a fixed element
-          painted below the body's own background here, making it invisible
-          regardless of what it rendered. Zero plus being first in the DOM
-          keeps it behind all normal (z-index:auto) page content while
-          staying above the page background. */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 z-0">
-        <JourneyCanvas theme={theme} />
-      </div>
-
       <div aria-hidden className="noise-layer" />
-      <CustomCursor />
       <ScrollProgress />
       <ChapterIndicator activeChapter={activeSection} />
       <SoundToggle enabled={soundEnabled} onToggle={toggleSound} />
       <EasterEggs />
 
-      <Navbar
-        activeSection={activeSection}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        onOpenPalette={() => setPaletteOpen(true)}
-      />
+      <Navbar activeSection={activeSection} onOpenPalette={() => setPaletteOpen(true)} />
 
       <main>
         {reducedMotion ? <Hero /> : <CinematicExperience />}

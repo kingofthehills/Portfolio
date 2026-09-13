@@ -34,7 +34,7 @@ export const SCROLL_RANGES = {
   environment: [0, 0.15] as const,
   approach: [0.05, 0.22] as const,
   aperture: [0.2, 0.38] as const,
-  ignite: [0.36, 0.48] as const,
+  ignite: [0.22, 0.4] as const,
   streamEmit: [0.46, 0.58] as const,
   streamTravel: [0.5, 0.78] as const,
   splash: [0.74, 0.83] as const,

@@ -79,10 +79,10 @@ export function ShellFragments() {
       <icosahedronGeometry args={[0.13, 0]} />
       <meshPhysicalMaterial
         ref={materialRef}
-        color="#10182c"
+        color="#180f28"
         metalness={0.8}
         roughness={0.25}
-        emissive="#35e7b7"
+        emissive="#fab044"
         emissiveIntensity={1}
       />
     </instancedMesh>

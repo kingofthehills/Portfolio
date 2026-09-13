@@ -37,11 +37,11 @@ export function PartyPopper() {
     <group ref={groupRef} visible={false}>
       <mesh rotation={[Math.PI, 0, 0]}>
         <coneGeometry args={[0.16, 0.4, 16, 1, true]} />
-        <meshStandardMaterial color="#4d7fff" roughness={0.4} metalness={0.1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#8a6cff" roughness={0.4} metalness={0.1} side={THREE.DoubleSide} />
       </mesh>
       <mesh position={[0, 0.22, 0]}>
         <sphereGeometry args={[0.07, 12, 12]} />
-        <meshStandardMaterial color="#35e7b7" emissive="#35e7b7" emissiveIntensity={0.6} roughness={0.3} />
+        <meshStandardMaterial color="#fab044" emissive="#fab044" emissiveIntensity={0.6} roughness={0.3} />
       </mesh>
     </group>
   )
