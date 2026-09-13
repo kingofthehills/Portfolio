@@ -36,7 +36,7 @@ function DustField({ count }: { count: number }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial ref={materialRef} color="#8fb3ff" size={0.014} transparent opacity={0.3} depthWrite={false} />
+      <pointsMaterial ref={materialRef} color="#c3b3ff" size={0.014} transparent opacity={0.3} depthWrite={false} />
     </points>
   )
 }
@@ -57,8 +57,8 @@ function Rig() {
   return (
     <>
       <ambientLight ref={ambientRef} intensity={0.15} />
-      <directionalLight ref={keyLightRef} position={[3, 4, 2]} intensity={0.5} color="#e8edff" />
-      <pointLight ref={rimLightRef} position={[-3, 1, -3]} color="#35e7b7" intensity={0.6} distance={9} />
+      <directionalLight ref={keyLightRef} position={[3, 4, 2]} intensity={0.5} color="#efe9ff" />
+      <pointLight ref={rimLightRef} position={[-3, 1, -3]} color="#fab044" intensity={0.6} distance={9} />
     </>
   )
 }
@@ -66,21 +66,21 @@ function Rig() {
 export function SceneEnvironment({ particleCount }: { particleCount: number }) {
   return (
     <>
-      <color attach="background" args={['#050608']} />
-      <fog attach="fog" args={['#050608', 5, 14]} />
+      <color attach="background" args={['#060609']} />
+      <fog attach="fog" args={['#060609', 5, 14]} />
       {/* Procedural, network-free environment — cheap to build and lights up
           the receiver's glass transmission without fetching a remote HDRI. */}
       <Environment resolution={32} frames={1}>
-        <Lightformer intensity={0.9} color="#4d7fff" position={[3, 2, 2]} scale={[4, 4, 1]} />
-        <Lightformer intensity={0.7} color="#35e7b7" position={[-3, -1, -2]} scale={[3, 3, 1]} />
+        <Lightformer intensity={0.9} color="#8a6cff" position={[3, 2, 2]} scale={[4, 4, 1]} />
+        <Lightformer intensity={0.7} color="#fab044" position={[-3, -1, -2]} scale={[3, 3, 1]} />
         <Lightformer intensity={0.5} color="#ffffff" position={[0, 3, -3]} scale={[6, 2, 1]} />
       </Environment>
       <Rig />
       <DustField count={particleCount} />
-      <gridHelper args={[24, 24, '#233056', '#0d1220']} position={[0, -2.2, 0]} />
+      <gridHelper args={[24, 24, '#33245c', '#170f26']} position={[0, -2.2, 0]} />
       <mesh position={[0, -2.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[30, 30]} />
-        <meshStandardMaterial color="#050608" roughness={0.35} metalness={0.6} />
+        <meshStandardMaterial color="#060609" roughness={0.35} metalness={0.6} />
       </mesh>
     </>
   )

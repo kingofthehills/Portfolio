@@ -64,12 +64,14 @@ export function ReceiverCrystal() {
     const color = energyColor(getEnergyMix(scene))
 
     if (fillRef.current) {
+      fillRef.current.visible = fill > 0.01
       const height = Math.max(0.001, fill * RECEIVER_RADIUS * 1.5)
-      fillRef.current.scale.set(RECEIVER_RADIUS * 0.7, height, RECEIVER_RADIUS * 0.7)
+      const spread = RECEIVER_RADIUS * 0.7 * Math.min(1, fill * 8)
+      fillRef.current.scale.set(spread, height, spread)
       fillRef.current.position.y = -RECEIVER_RADIUS + height / 2
       const material = fillRef.current.material as THREE.MeshStandardMaterial
       material.emissive.copy(color)
-      material.emissiveIntensity = 0.6 + fill * 1.8
+      material.emissiveIntensity = fill * 2.4
     }
     if (lightRef.current) {
       lightRef.current.intensity = fill * 4
@@ -88,14 +90,14 @@ export function ReceiverCrystal() {
           ior={1.4}
           clearcoat={0.4}
           clearcoatRoughness={0.15}
-          color="#e8f0ff"
-          attenuationColor="#dfe9ff"
+          color="#f2ecff"
+          attenuationColor="#ece3ff"
           attenuationDistance={1.2}
         />
       </mesh>
       <mesh ref={fillRef}>
         <cylinderGeometry args={[1, 1, 1, 20]} />
-        <meshStandardMaterial color="#0a0e18" emissive="#1c2a52" roughness={0.3} metalness={0.1} />
+        <meshStandardMaterial color="#0f0b1a" emissive="#2b2050" roughness={0.3} metalness={0.1} />
       </mesh>
       <pointLight ref={lightRef} distance={4} decay={2} position={[0, 0, 0]} />
       <SparkBurst />

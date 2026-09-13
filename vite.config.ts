@@ -10,4 +10,10 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
+  server: {
+    // ngrok's free tier assigns a new random *.ngrok-free.dev subdomain
+    // each time the tunnel restarts — allowing the whole suffix means
+    // this doesn't need updating every time you get a new tunnel URL.
+    allowedHosts: ['.ngrok-free.dev'],
+  },
 })

@@ -22,7 +22,7 @@ export function EasterEggs() {
   useEffect(() => {
     console.log(
       '%c👋 Poking around the console?',
-      'font-size:14px;font-weight:600;color:#4d7fff;',
+      'font-size:14px;font-weight:600;color:#8a6cff;',
       '\nLet\'s talk: see the contact section, or open the command palette with ⌘K / Ctrl K.',
     )
   }, [])

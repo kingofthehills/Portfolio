@@ -50,7 +50,9 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
         </div>
       </button>
 
-      <div className={`col-span-1 lg:col-span-5 ${reversed ? 'lg:order-1' : ''}`}>
+      <div
+        className={`col-span-1 rounded-2xl border border-border/20 bg-surface/70 p-6 backdrop-blur-md lg:col-span-5 ${reversed ? 'lg:order-1' : ''}`}
+      >
         <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-faint">
           <span>{String(index + 1).padStart(2, '0')}</span>
           <span className="h-px w-8 bg-border/40" />
@@ -59,13 +61,21 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
         </div>
 
         <h3 className="mt-4 font-display text-2xl text-ink sm:text-3xl">{project.title}</h3>
-        <p className="mt-3 max-w-md text-balance leading-relaxed text-muted">{project.description}</p>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-3 max-w-md text-balance leading-relaxed text-muted"
+        >
+          {project.description}
+        </motion.p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-border/30 px-3 py-1 text-[11px] font-mono text-muted"
+              className="rounded-full border border-border/30 bg-bg/40 px-3 py-1 text-[11px] font-mono text-muted"
             >
               {tech}
             </span>

@@ -140,23 +140,23 @@ export function Ball() {
           <sphereGeometry args={[RADIUS, 48, 48]} />
           <meshPhysicalMaterial
             ref={materialRef}
-            color="#1f8f6f"
+            color="#b5730f"
             metalness={0.4}
             roughness={0.42}
             clearcoat={0.35}
             clearcoatRoughness={0.5}
-            emissive="#35e7b7"
+            emissive="#fab044"
             emissiveIntensity={0.7}
           />
         </mesh>
-        <pointLight ref={rimLightRef} color="#35e7b7" distance={3.5} decay={2} intensity={1.8} />
+        <pointLight ref={rimLightRef} color="#fab044" distance={3.5} decay={2} intensity={1.8} />
       </group>
 
       <points ref={trailRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[trailPositions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#35e7b7" size={0.05} transparent opacity={0.35} depthWrite={false} sizeAttenuation />
+        <pointsMaterial color="#fab044" size={0.05} transparent opacity={0.35} depthWrite={false} sizeAttenuation />
       </points>
     </>
   )

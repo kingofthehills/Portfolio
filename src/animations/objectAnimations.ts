@@ -1,7 +1,7 @@
 import type { SceneProgress } from '@/animations/scrollTimeline'
 import { clamp, remap } from '@/lib/mathUtils'
 
-const MAX_APERTURE_ANGLE = Math.PI / 2.1
+export const MAX_APERTURE_ANGLE = Math.PI / 2.1
 
 /** How far each outer shell panel has rotated open, in radians. */
 export function getApertureAngle(scene: SceneProgress): number {

@@ -1,17 +1,17 @@
 import * as THREE from 'three'
 
 export const PALETTE = {
-  dormant: '#1c2a52',
-  accentBlue: '#4d7fff',
-  accentMint: '#35e7b7',
-  ink: '#f5f5f7',
-  void: '#050608',
+  dormant: '#2b2050',
+  accentBlue: '#8a6cff',
+  accentMint: '#fab044',
+  ink: '#f6f5fa',
+  void: '#060609',
 }
 
 const dormantColor = new THREE.Color(PALETTE.dormant)
 const mintColor = new THREE.Color(PALETTE.accentMint)
 const blueColor = new THREE.Color(PALETTE.accentBlue)
-const mintBright = new THREE.Color('#baffe9')
+const mintBright = new THREE.Color('#ffd98a')
 
 /** Lerps from the dormant story color, through blue, to ignited mint as `mix` goes 0→1. Used by the Home cinematic's Core/Receiver story. */
 export function energyColor(mix: number): THREE.Color {

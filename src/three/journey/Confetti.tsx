@@ -7,7 +7,7 @@ import { explosionState, getExplosionPhase } from '@/three/utils/explosionStore'
 const COUNT = 140
 const dummy = new THREE.Object3D()
 
-const PALETTE = ['#4d7fff', '#35e7b7', '#f5f5f7', '#8fb3ff']
+const PALETTE = ['#8a6cff', '#fab044', '#f6f5fa', '#c3b3ff']
 
 interface Piece {
   position: THREE.Vector3

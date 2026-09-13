@@ -14,7 +14,7 @@ export const personal = {
   resumeUrl: '/resume.pdf',
   about: {
     intro:
-      "I'm a developer who cares as much about how software feels as how it works. As a Web Developer Intern at Ellocent Labs, I've shipped features for Hiremii, an AI-powered ATS — from an AI-driven Talent Pool module to a bulk resume import system — taking each from a rough sketch to a polished, production-ready product.",
+      "I'm a developer who cares as much about how software feels as how it works. I build full-stack products end to end — from a rough idea and a blank editor to something fast, reliable, and genuinely pleasant to use, with the same attention on the API underneath as the interface on top.",
     philosophy:
       'Good engineering is invisible. I aim for interfaces that are fast, predictable, and quietly confident — never louder than the problem they solve.',
     focus:

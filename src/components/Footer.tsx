@@ -1,3 +1,4 @@
+import { RuixenGradientFooter } from '@/components/RuixenGradientFooter'
 import { socialLinks } from '@/data/social'
 import { personal } from '@/data/personal'
 import { navItems } from '@/data/navigation'
@@ -6,11 +7,17 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t border-border/20">
+    <RuixenGradientFooter
+      minReveal={0}
+      className="relative border-t border-border/20"
+    >
       <div className="mx-auto max-w-[1400px] px-6 py-14 sm:px-10 lg:px-16">
         <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <span className="font-display text-lg text-ink">{personal.name}</span>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt={personal.name} className="h-7 w-auto" />
+              <span className="font-display text-lg text-ink">{personal.name}</span>
+            </div>
             <p className="mt-2 max-w-xs text-sm text-muted">Designed &amp; built with curiosity.</p>
           </div>
 
@@ -43,6 +50,6 @@ export function Footer() {
           <span className="font-mono uppercase tracking-widest">Built with React · Three.js · Framer Motion</span>
         </div>
       </div>
-    </footer>
+    </RuixenGradientFooter>
   )
 }
