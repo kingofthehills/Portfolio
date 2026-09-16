@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-import { crazyone } from './format.ts'
+import { crazyone } from './format.js'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

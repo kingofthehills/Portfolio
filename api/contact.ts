@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { parseContactPayload, sendContactEmail } from '../server/mailer'
+import { parseContactPayload, sendContactEmail } from '../server/mailer.js'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
