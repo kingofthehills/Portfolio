@@ -107,7 +107,7 @@ export function Contact() {
         <form onSubmit={handleSubmit} noValidate className="lg:col-span-7">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="sm:col-span-1">
-              <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-faint">
+              <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted">
                 Name
               </label>
               <input
@@ -119,11 +119,11 @@ export function Contact() {
                 className="mt-2 w-full rounded-xl border border-border/40 bg-surface/40 px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent/60"
                 placeholder="Your name"
               />
-              {errors.name ? <p className="mt-1.5 text-xs text-red-400">{errors.name}</p> : null}
+              {errors.name ? <p className="mt-1.5 text-xs font-medium text-ink">{errors.name}</p> : null}
             </div>
 
             <div className="sm:col-span-1">
-              <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-faint">
+              <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted">
                 Email
               </label>
               <input
@@ -135,11 +135,11 @@ export function Contact() {
                 className="mt-2 w-full rounded-xl border border-border/40 bg-surface/40 px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent/60"
                 placeholder="you@example.com"
               />
-              {errors.email ? <p className="mt-1.5 text-xs text-red-400">{errors.email}</p> : null}
+              {errors.email ? <p className="mt-1.5 text-xs font-medium text-ink">{errors.email}</p> : null}
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-faint">
+              <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted">
                 Message
               </label>
               <textarea
@@ -151,7 +151,7 @@ export function Contact() {
                 className="mt-2 w-full resize-none rounded-xl border border-border/40 bg-surface/40 px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent/60"
                 placeholder="Tell me about your project..."
               />
-              {errors.message ? <p className="mt-1.5 text-xs text-red-400">{errors.message}</p> : null}
+              {errors.message ? <p className="mt-1.5 text-xs font-medium text-ink">{errors.message}</p> : null}
             </div>
           </div>
 
@@ -181,7 +181,7 @@ export function Contact() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
-                  className="inline-flex items-center gap-1.5 text-sm text-accent2"
+                  className="inline-flex items-center gap-1.5 text-sm text-ink"
                 >
                   <CheckCircle2 size={16} /> Message sent — I&apos;ll be in touch.
                 </motion.span>
@@ -192,7 +192,7 @@ export function Contact() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
-                  className="inline-flex items-center gap-1.5 text-sm text-red-400"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-ink"
                 >
                   <XCircle size={16} /> Something went wrong. Try again.
                 </motion.span>

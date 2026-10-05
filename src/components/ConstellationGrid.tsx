@@ -16,7 +16,11 @@ interface Node {
 // triples rather than `rgb(var(--x))` — canvas fillStyle needs concrete
 // component values, it can't read CSS custom properties directly.
 const NODE_RGB = '246, 245, 250' // --ink
-const ACCENT_RGB = '138, 108, 255' // --accent
+// The hovered node's highlight, its pulse ring and its little coordinate
+// label all draw in this. It used to be --accent (purple); kept on --ink
+// so the labels read as the same two-tone type as the rest of the section
+// instead of being the one place a third colour shows up in text.
+const ACCENT_RGB = NODE_RGB
 
 const SPACING = 55
 const MAX_CONN_DIST = 75

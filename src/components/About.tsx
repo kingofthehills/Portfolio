@@ -42,9 +42,9 @@ export function About() {
       <div className="relative z-10 mb-14 w-[106%] -translate-x-[3%] -rotate-1 overflow-hidden border-y border-border/20 bg-surface/60 py-3">
         <div className="flex w-max animate-marquee items-center gap-10 whitespace-nowrap">
           {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i} className="flex items-center gap-10 font-mono text-xs uppercase tracking-[0.2em] text-faint">
+            <span key={i} className="flex items-center gap-10 font-mono text-xs uppercase tracking-[0.2em] text-muted">
               {item}
-              <span className="text-accent2">+</span>
+              <span className="text-muted/60">+</span>
             </span>
           ))}
         </div>
@@ -59,7 +59,7 @@ export function About() {
               text="The developer behind the pixels."
               fontSize="clamp(1.875rem, 5vw, 3rem)"
               color="rgb(var(--ink))"
-              hoverColor="#d4a017"
+              hoverColor="rgb(var(--muted))"
               className="font-display normal-case tracking-tight"
             />
           }
@@ -77,11 +77,11 @@ export function About() {
             <p className="text-balance leading-relaxed text-muted">{personal.about.philosophy}</p>
             <p className="text-balance leading-relaxed text-muted">{personal.about.focus}</p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2 text-sm text-faint">
+            <div className="flex flex-wrap items-center gap-4 pt-2 text-sm text-muted">
               <span className="inline-flex items-center gap-1.5">
                 <MapPin size={14} /> {personal.location}
               </span>
-              <span className="h-1 w-1 rounded-full bg-faint/50" />
+              <span className="h-1 w-1 rounded-full bg-muted/40" />
               <span>{personal.timezone}</span>
             </div>
           </motion.div>
@@ -94,10 +94,13 @@ export function About() {
             className="overflow-hidden rounded-2xl border border-border/30 bg-surface/40 lg:col-span-5"
           >
             <div className="flex items-center gap-1.5 border-b border-border/20 px-5 py-3">
-              <span className="h-2 w-2 rounded-full bg-red-400/60" />
-              <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
-              <span className="h-2 w-2 rounded-full bg-accent2/60" />
-              <span className="ml-3 font-mono text-[10px] uppercase tracking-widest text-faint">
+              {/* window dots stepped down in weight rather than coloured
+                  red/amber/green — they read as the same chrome without
+                  dragging three extra hues onto the page */}
+              <span className="h-2 w-2 rounded-full bg-muted/60" />
+              <span className="h-2 w-2 rounded-full bg-muted/40" />
+              <span className="h-2 w-2 rounded-full bg-muted/25" />
+              <span className="ml-3 font-mono text-[10px] uppercase tracking-widest text-muted">
                 creator_profile.sys
               </span>
             </div>
@@ -110,21 +113,21 @@ export function About() {
                 { key: 'TIMEZONE', value: personal.timezone },
               ].map((row) => (
                 <div key={row.key} className="flex items-baseline gap-3">
-                  <span className="w-24 shrink-0 text-faint">{row.key}</span>
+                  <span className="w-24 shrink-0 text-muted">{row.key}</span>
                   <span className="text-ink">{row.value}</span>
                 </div>
               ))}
             </div>
 
             <div className="mt-5 border-t border-border/20 px-5 py-5">
-              <div className="mb-4 flex items-center gap-2 text-accent">
+              <div className="mb-4 flex items-center gap-2 text-ink">
                 <Sparkles size={16} />
                 <span className="font-mono text-xs uppercase tracking-widest">What I enjoy building</span>
               </div>
               <ul className="space-y-3">
                 {personal.about.enjoys.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent2" />
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted/70" />
                     {item}
                   </li>
                 ))}

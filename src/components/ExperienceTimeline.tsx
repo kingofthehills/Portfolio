@@ -49,12 +49,12 @@ export function ExperienceTimeline() {
                   className="relative"
                 >
                   <span className="absolute -left-10 top-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-accent/50 bg-bg sm:-left-14 sm:h-6 sm:w-6">
-                    <Icon size={11} className="text-accent" />
+                    <Icon size={11} className="text-ink" />
                   </span>
 
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-xs uppercase tracking-widest text-accent2">{milestone.year}</span>
-                    <span className="rounded-full border border-border/30 px-2.5 py-0.5 text-[10px] uppercase tracking-wide text-faint">
+                    <span className="font-mono text-xs uppercase tracking-widest text-muted">{milestone.year}</span>
+                    <span className="rounded-full border border-border/30 px-2.5 py-0.5 text-[10px] uppercase tracking-wide text-muted">
                       {milestone.type}
                     </span>
                   </div>

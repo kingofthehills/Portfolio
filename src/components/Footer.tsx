@@ -45,7 +45,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col-reverse items-start justify-between gap-4 border-t border-border/10 pt-6 text-xs text-faint sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col-reverse items-start justify-between gap-4 border-t border-border/10 pt-6 text-xs text-muted sm:flex-row sm:items-center">
           <span>© {year} {personal.name}. All rights reserved.</span>
           <span className="font-mono uppercase tracking-widest">Built with React · Three.js · Framer Motion</span>
         </div>

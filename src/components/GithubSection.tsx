@@ -101,7 +101,7 @@ export function GithubSection() {
               </div>
               <div>
                 <div className="flex items-center gap-1.5 font-display text-2xl text-ink">
-                  <Users size={16} className="text-accent2" /> {profile.followers}
+                  <Users size={16} className="text-muted" /> {profile.followers}
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-wide text-muted">Followers</div>
               </div>
@@ -132,7 +132,7 @@ export function GithubSection() {
                       <span className="font-mono text-sm text-ink">{repo.name}</span>
                       <p className="mt-2 text-sm leading-relaxed text-muted">{repo.description ?? 'No description provided.'}</p>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-faint">
+                    <div className="flex items-center gap-4 text-xs text-muted">
                       {repo.language ? <span>{repo.language}</span> : null}
                       <span className="inline-flex items-center gap-1">
                         <Star size={12} /> {repo.stargazers_count}

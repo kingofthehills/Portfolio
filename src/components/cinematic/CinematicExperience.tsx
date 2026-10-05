@@ -146,9 +146,18 @@ export const CinematicExperience = memo(function CinematicExperience({ onProgres
       // as buffer before unsticking into About. At these heights that's
       // roughly a couple of scroll-wheel notches, not a long dead
       // stretch.
-      style={{ height: isSmallScreen ? '145vh' : '180vh' }}
+      style={{ height: isSmallScreen ? '145lvh' : '180lvh' }}
     >
-      <div className="sticky top-0 h-[100svh] w-full overflow-hidden bg-bg">
+      {/* lvh, not svh: svh is the viewport with the mobile URL bar
+          *showing*, so once the bar slid away while scrolling the pinned
+          panel was shorter than the viewport and left an uncovered strip
+          along the bottom edge — which read as a black band appearing
+          mid-scroll. Sizing to the large viewport means the panel always
+          covers, at the cost of being slightly taller than the viewport
+          while the bar is visible, which only crops the frame a little.
+          The section height above is in the same unit so the sticky range
+          stays exactly (height - panel). */}
+      <div className="sticky top-0 h-[100lvh] w-full overflow-hidden bg-bg">
         <ScrollFrameHero
           progress={scrollYProgress}
           scrollEnd={HERO_FRAMES_SCROLL_END}
@@ -183,11 +192,17 @@ export const CinematicExperience = memo(function CinematicExperience({ onProgres
           <motion.p
             style={{
               opacity: roleOpacity,
-              color: '#4fd8ff',
+              // Warm gold instead of the old neon cyan — it's the site's
+              // own --accent-2 hue, and it sits with the city's amber
+              // street lighting rather than fighting it. Hard-coded
+              // rather than read from the token because this text is
+              // always over dark footage, so it must not follow the
+              // light theme's darker amber.
+              color: '#fab044',
               // A dark contact shadow first (guarantees legibility over
               // any part of the busy, brightly-lit city background),
               // then a matching-hue glow on top for a neon-sign pop.
-              textShadow: '0 2px 10px rgba(0,0,0,0.9), 0 0 24px rgba(79,216,255,0.65)',
+              textShadow: '0 2px 10px rgba(0,0,0,0.9), 0 0 24px rgba(250,176,68,0.55)',
             }}
             className="font-mono text-xl font-bold uppercase tracking-[0.3em] sm:text-2xl"
           >

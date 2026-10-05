@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Two-tone type system. Outside the home/hero section, every piece of
+   text on the site is exactly one of two colours: --ink (primary —
+   headings, names, values, links, active state) or --muted (secondary —
+   eyebrows, labels, meta, body copy, inactive state). The only other
+   colour text takes is --bg, and only when it sits on an ink-filled
+   surface (buttons), which is the same pair inverted rather than a third
+   colour.
+   --accent / --accent-2 remain for non-text decoration (the hero's glow
+   and gradient wordmark, the scroll rail, 3D lighting). They are
+   deliberately no longer used to colour type anywhere. */
 :root {
   --bg: 6 6 9;
   --surface: 14 13 19;

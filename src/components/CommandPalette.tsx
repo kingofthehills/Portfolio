@@ -177,21 +177,21 @@ export function CommandPalette({
         className="w-full max-w-lg overflow-hidden rounded-2xl border border-border/40 bg-surface shadow-2xl shadow-black/50"
       >
         <div className="flex items-center gap-3 border-b border-border/20 px-4 py-3.5">
-          <Search size={16} className="text-faint" />
+          <Search size={16} className="text-muted" />
           <input
             ref={inputRef}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             placeholder="Type a command or search..."
-            className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-faint"
+            className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-muted"
           />
-          <kbd className="rounded border border-border/40 px-1.5 py-0.5 font-mono text-[10px] text-faint">ESC</kbd>
+          <kbd className="rounded border border-border/40 px-1.5 py-0.5 font-mono text-[10px] text-muted">ESC</kbd>
         </div>
 
         <ul className="max-h-80 overflow-y-auto p-2">
           {filtered.length === 0 ? (
-            <li className="px-3 py-6 text-center text-sm text-faint">No matching commands.</li>
+            <li className="px-3 py-6 text-center text-sm text-muted">No matching commands.</li>
           ) : (
             filtered.map((command, index) => {
               const Icon = command.icon
@@ -212,7 +212,7 @@ export function CommandPalette({
                       <Icon size={15} />
                       {command.label}
                     </span>
-                    {command.hint ? <span className="font-mono text-[10px] text-faint">{command.hint}</span> : null}
+                    {command.hint ? <span className="font-mono text-[10px] text-muted">{command.hint}</span> : null}
                   </button>
                 </li>
               )

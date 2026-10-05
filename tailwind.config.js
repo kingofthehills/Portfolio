@@ -9,6 +9,8 @@ export default {
         surface: 'rgb(var(--surface) / <alpha-value>)',
         'surface-2': 'rgb(var(--surface-2) / <alpha-value>)',
         border: 'rgb(var(--border) / <alpha-value>)',
+        // Type outside the hero runs on these two and nothing else; see
+        // the two-tone note at the top of src/index.css.
         ink: 'rgb(var(--ink) / <alpha-value>)',
         muted: 'rgb(var(--muted) / <alpha-value>)',
         faint: 'rgb(var(--faint) / <alpha-value>)',
