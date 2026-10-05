@@ -53,7 +53,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
       <div
         className={`col-span-1 rounded-2xl border border-border/20 bg-surface/70 p-6 backdrop-blur-md lg:col-span-5 ${reversed ? 'lg:order-1' : ''}`}
       >
-        <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-faint">
+        <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted">
           <span>{String(index + 1).padStart(2, '0')}</span>
           <span className="h-px w-8 bg-border/40" />
           <span>{project.category}</span>

@@ -35,7 +35,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-faint"
+        className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted"
       >
         Loading experience
       </motion.span>

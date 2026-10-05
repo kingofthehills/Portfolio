@@ -65,7 +65,7 @@ export function TechStack() {
                     <div className="relative z-10 flex h-full flex-col justify-between gap-6">
                       <div className="flex items-center justify-between gap-2">
                         <span className="min-w-0 truncate font-display text-lg text-ink">{skill.name}</span>
-                        <span className="shrink-0 whitespace-nowrap rounded-full border border-border/30 px-2 py-0.5 font-mono text-[10px] text-faint">
+                        <span className="shrink-0 whitespace-nowrap rounded-full border border-border/30 px-2 py-0.5 font-mono text-[10px] text-muted">
                           {skill.level}
                         </span>
                       </div>
@@ -87,15 +87,15 @@ export function TechStack() {
             className="overflow-hidden rounded-2xl border border-border/30 bg-surface/40 lg:col-span-4"
           >
             <div className="flex items-center gap-2 border-b border-border/20 px-5 py-4">
-              <Award size={16} className="text-accent2" />
-              <span className="font-mono text-xs uppercase tracking-widest text-faint">Certifications</span>
+              <Award size={16} className="text-muted" />
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">Certifications</span>
             </div>
 
             <ul className="divide-y divide-border/15">
               {certifications.map((cert) => (
                 <li key={cert.id} className="px-5 py-4">
                   <div className="flex items-baseline justify-between gap-3">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-accent2">{cert.year}</span>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted">{cert.year}</span>
                   </div>
                   <h3 className="mt-1.5 font-display text-base leading-snug text-ink">{cert.title}</h3>
                   <p className="mt-1 text-sm text-muted">{cert.organization}</p>

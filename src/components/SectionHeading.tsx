@@ -16,11 +16,11 @@ export function SectionHeading({ eyebrow, title, description, align = 'left' }: 
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className={`flex items-center gap-3 text-xs font-mono uppercase tracking-[0.25em] text-accent mb-5 ${
+        className={`flex items-center gap-3 text-xs font-mono uppercase tracking-[0.25em] text-muted mb-5 ${
           align === 'center' ? 'justify-center' : ''
         }`}
       >
-        <span className="h-px w-8 bg-accent/60" />
+        <span className="h-px w-8 bg-muted/60" />
         {eyebrow}
       </motion.div>
       <motion.h2

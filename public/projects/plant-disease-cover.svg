@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Plant disease detection — ResNet101 transfer learning on coriander leaf images">
+  <defs>
+    <linearGradient id="pd-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06080a"/>
+      <stop offset="55%" stop-color="#0a1110"/>
+      <stop offset="100%" stop-color="#0d1a14"/>
+    </linearGradient>
+    <radialGradient id="pd-glow" cx="0.28" cy="0.2" r="0.75">
+      <stop offset="0%" stop-color="#35c489" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#35c489" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pd-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="pd-leaf" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#43d195"/>
+      <stop offset="55%" stop-color="#23996a"/>
+      <stop offset="100%" stop-color="#136046"/>
+    </linearGradient>
+    <linearGradient id="pd-scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35c489" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8ff0c6" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#35c489" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pd-legend" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#35c489" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#35c489" stop-opacity="0.04"/>
+    </linearGradient>
+    <clipPath id="pd-leaf-clip">
+      <path d="M 310 466 C 214 400, 209 284, 310 214 C 411 284, 406 400, 310 466 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#pd-bg)"/>
+  <rect width="1200" height="800" fill="url(#pd-grid)"/>
+  <rect width="1200" height="800" fill="url(#pd-glow)"/>
+
+  <!-- Everything below is scaled 7% in about the centre so it survives the
+       two crops this cover gets rendered through: the project card's 4:3
+       (which trims ~5.5% off each side of this 3:2 artwork) and the case
+       study modal's 16:9 (which trims ~8% off the top and bottom). The
+       background rects above stay full-bleed so no edge is ever exposed. -->
+  <g transform="translate(600 400) scale(0.93) translate(-600 -400)">
+
+  <!-- app window -->
+  <rect x="70" y="60" width="1060" height="680" rx="22" fill="#0b0e12" stroke="#ffffff" stroke-opacity="0.09"/>
+  <path d="M 70 108 H 1130" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="104" cy="84" r="6" fill="#ffffff" fill-opacity="0.26"/>
+  <circle cx="126" cy="84" r="6" fill="#ffffff" fill-opacity="0.17"/>
+  <circle cx="148" cy="84" r="6" fill="#ffffff" fill-opacity="0.11"/>
+  <text x="182" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#d2d6de">plant_disease_detection</text>
+  <text x="1096" y="89" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13.5" fill="#79808d">ResNet101 · TensorFlow / Keras</text>
+
+  <!-- ── left: input sample ─────────────────────────────── -->
+  <text x="100" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" letter-spacing="2.2" fill="#6d7581">INPUT · CORIANDER LEAF</text>
+  <rect x="100" y="150" width="420" height="400" rx="16" fill="#070a0c" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- leaf -->
+  <path d="M 310 466 C 214 400, 209 284, 310 214 C 411 284, 406 400, 310 466 Z" fill="url(#pd-leaf)"/>
+  <g clip-path="url(#pd-leaf-clip)">
+    <!-- lesions -->
+    <circle cx="272" cy="332" r="14" fill="#c4873a" fill-opacity="0.85"/>
+    <circle cx="272" cy="332" r="7" fill="#7d4a16" fill-opacity="0.9"/>
+    <circle cx="343" cy="392" r="10" fill="#c4873a" fill-opacity="0.8"/>
+    <circle cx="343" cy="392" r="4.5" fill="#7d4a16" fill-opacity="0.9"/>
+    <circle cx="349" cy="291" r="7" fill="#c4873a" fill-opacity="0.72"/>
+    <circle cx="289" cy="404" r="5.5" fill="#c4873a" fill-opacity="0.6"/>
+    <circle cx="326" cy="258" r="4.5" fill="#c4873a" fill-opacity="0.5"/>
+    <!-- scan sweep -->
+    <rect x="190" y="344" width="240" height="3" fill="url(#pd-scan)"/>
+    <rect x="190" y="347" width="240" height="30" fill="url(#pd-scan)" opacity="0.1"/>
+  </g>
+  <!-- midrib + veins -->
+  <g stroke="#0d4a34" stroke-opacity="0.55" stroke-linecap="round" fill="none">
+    <path d="M 310 462 L 310 222" stroke-width="3"/>
+    <path d="M 310 428 Q 282 420, 253 400" stroke-width="2"/>
+    <path d="M 310 388 Q 274 378, 241 352" stroke-width="2"/>
+    <path d="M 310 346 Q 280 334, 247 306" stroke-width="2"/>
+    <path d="M 310 304 Q 288 292, 263 268" stroke-width="2"/>
+    <path d="M 310 264 Q 298 254, 283 238" stroke-width="2"/>
+    <path d="M 310 428 Q 338 420, 367 400" stroke-width="2"/>
+    <path d="M 310 388 Q 346 378, 379 352" stroke-width="2"/>
+    <path d="M 310 346 Q 340 334, 373 306" stroke-width="2"/>
+    <path d="M 310 304 Q 332 292, 357 268" stroke-width="2"/>
+    <path d="M 310 264 Q 322 254, 337 238" stroke-width="2"/>
+  </g>
+  <!-- scan frame brackets -->
+  <g stroke="#35c489" stroke-opacity="0.65" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M 206 240 L 206 212 L 234 212"/>
+    <path d="M 386 212 L 414 212 L 414 240"/>
+    <path d="M 414 440 L 414 468 L 386 468"/>
+    <path d="M 234 468 L 206 468 L 206 440"/>
+  </g>
+
+  <!-- chips -->
+  <rect x="120" y="500" width="118" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.09"/>
+  <text x="179" y="520" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#9aa1ad">224 × 224</text>
+  <rect x="248" y="500" width="130" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.09"/>
+  <text x="313" y="520" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#9aa1ad">augmented</text>
+  <rect x="388" y="500" width="112" height="30" rx="15" fill="#35c489" fill-opacity="0.12" stroke="#35c489" stroke-opacity="0.35"/>
+  <text x="444" y="520" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#6fdcae">softmax</text>
+
+  <!-- ── right: confusion matrix ────────────────────────── -->
+  <text x="550" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" letter-spacing="2.2" fill="#6d7581">VALIDATION CONFUSION MATRIX</text>
+  <rect x="550" y="150" width="550" height="400" rx="16" fill="#070a0c" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- axis captions -->
+  <text x="825" y="534" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.4" fill="#5d646f">PREDICTED</text>
+  <text x="586" y="350" text-anchor="middle" transform="rotate(-90 586 350)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.4" fill="#5d646f">TRUE</text>
+
+  <!-- row labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#6d7581" text-anchor="end">
+    <text x="662" y="229">c1</text>
+    <text x="662" y="280">c2</text>
+    <text x="662" y="331">c3</text>
+    <text x="662" y="382">c4</text>
+    <text x="662" y="433">c5</text>
+    <text x="662" y="484">c6</text>
+  </g>
+  <!-- column labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#6d7581" text-anchor="middle">
+    <text x="698" y="508">c1</text>
+    <text x="749" y="508">c2</text>
+    <text x="800" y="508">c3</text>
+    <text x="851" y="508">c4</text>
+    <text x="902" y="508">c5</text>
+    <text x="953" y="508">c6</text>
+  </g>
+
+  <!-- cells: base -->
+  <g fill="#ffffff" fill-opacity="0.035">
+    <rect x="675" y="202" width="46" height="46" rx="6"/><rect x="726" y="202" width="46" height="46" rx="6"/><rect x="777" y="202" width="46" height="46" rx="6"/><rect x="828" y="202" width="46" height="46" rx="6"/><rect x="879" y="202" width="46" height="46" rx="6"/><rect x="930" y="202" width="46" height="46" rx="6"/>
+    <rect x="675" y="253" width="46" height="46" rx="6"/><rect x="726" y="253" width="46" height="46" rx="6"/><rect x="777" y="253" width="46" height="46" rx="6"/><rect x="828" y="253" width="46" height="46" rx="6"/><rect x="879" y="253" width="46" height="46" rx="6"/><rect x="930" y="253" width="46" height="46" rx="6"/>
+    <rect x="675" y="304" width="46" height="46" rx="6"/><rect x="726" y="304" width="46" height="46" rx="6"/><rect x="777" y="304" width="46" height="46" rx="6"/><rect x="828" y="304" width="46" height="46" rx="6"/><rect x="879" y="304" width="46" height="46" rx="6"/><rect x="930" y="304" width="46" height="46" rx="6"/>
+    <rect x="675" y="355" width="46" height="46" rx="6"/><rect x="726" y="355" width="46" height="46" rx="6"/><rect x="777" y="355" width="46" height="46" rx="6"/><rect x="828" y="355" width="46" height="46" rx="6"/><rect x="879" y="355" width="46" height="46" rx="6"/><rect x="930" y="355" width="46" height="46" rx="6"/>
+    <rect x="675" y="406" width="46" height="46" rx="6"/><rect x="726" y="406" width="46" height="46" rx="6"/><rect x="777" y="406" width="46" height="46" rx="6"/><rect x="828" y="406" width="46" height="46" rx="6"/><rect x="879" y="406" width="46" height="46" rx="6"/><rect x="930" y="406" width="46" height="46" rx="6"/>
+    <rect x="675" y="457" width="46" height="46" rx="6"/><rect x="726" y="457" width="46" height="46" rx="6"/><rect x="777" y="457" width="46" height="46" rx="6"/><rect x="828" y="457" width="46" height="46" rx="6"/><rect x="879" y="457" width="46" height="46" rx="6"/><rect x="930" y="457" width="46" height="46" rx="6"/>
+  </g>
+  <!-- cells: intensity (strong diagonal, light off-diagonal confusion) -->
+  <g fill="#35c489">
+    <rect x="675" y="202" width="46" height="46" rx="6" fill-opacity="0.95"/><rect x="726" y="202" width="46" height="46" rx="6" fill-opacity="0.07"/><rect x="828" y="202" width="46" height="46" rx="6" fill-opacity="0.05"/>
+    <rect x="675" y="253" width="46" height="46" rx="6" fill-opacity="0.06"/><rect x="726" y="253" width="46" height="46" rx="6" fill-opacity="0.88"/><rect x="828" y="253" width="46" height="46" rx="6" fill-opacity="0.09"/>
+    <rect x="777" y="304" width="46" height="46" rx="6" fill-opacity="0.82"/><rect x="879" y="304" width="46" height="46" rx="6" fill-opacity="0.11"/><rect x="726" y="304" width="46" height="46" rx="6" fill-opacity="0.06"/>
+    <rect x="828" y="355" width="46" height="46" rx="6" fill-opacity="0.9"/><rect x="726" y="355" width="46" height="46" rx="6" fill-opacity="0.08"/>
+    <rect x="879" y="406" width="46" height="46" rx="6" fill-opacity="0.84"/><rect x="777" y="406" width="46" height="46" rx="6" fill-opacity="0.12"/><rect x="675" y="406" width="46" height="46" rx="6" fill-opacity="0.05"/>
+    <rect x="930" y="457" width="46" height="46" rx="6" fill-opacity="0.93"/><rect x="828" y="457" width="46" height="46" rx="6" fill-opacity="0.06"/>
+  </g>
+
+  <!-- legend -->
+  <rect x="1000" y="202" width="10" height="301" rx="5" fill="url(#pd-legend)"/>
+  <text x="1022" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6d7581">high</text>
+  <text x="1022" y="506" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6d7581">low</text>
+
+  <!-- ── bottom: stat tiles ─────────────────────────────── -->
+  <g>
+    <rect x="100" y="580" width="238" height="100" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.07"/>
+    <text x="122" y="610" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" letter-spacing="1.8" fill="#6d7581">BACKBONE</text>
+    <text x="122" y="641" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#eceef2">ResNet101</text>
+    <text x="122" y="663" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#868d99">ImageNet weights</text>
+
+    <rect x="354" y="580" width="238" height="100" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.07"/>
+    <text x="376" y="610" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" letter-spacing="1.8" fill="#6d7581">CLASSES</text>
+    <text x="376" y="641" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#eceef2">6</text>
+    <text x="376" y="663" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#868d99">class-balanced</text>
+
+    <rect x="608" y="580" width="238" height="100" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.07"/>
+    <text x="630" y="610" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" letter-spacing="1.8" fill="#6d7581">DATASET</text>
+    <text x="630" y="641" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#eceef2">838 images</text>
+    <text x="630" y="663" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#868d99">713 train · 125 val</text>
+
+    <rect x="862" y="580" width="238" height="100" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.07"/>
+    <text x="884" y="610" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" letter-spacing="1.8" fill="#6d7581">TRAINING</text>
+    <text x="884" y="641" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#eceef2">2-phase</text>
+    <text x="884" y="663" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#868d99">frozen → fine-tune 30</text>
+  </g>
+
+  </g>
+</svg>

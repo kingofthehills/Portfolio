@@ -10,7 +10,7 @@ export function ChapterIndicator({ activeChapter }: { activeChapter: string }) {
           <div key={chapter.id} className="flex items-center gap-3">
             <span
               className={`font-mono text-[11px] tracking-widest transition-colors duration-500 ${
-                isActive ? 'text-ink' : 'text-faint'
+                isActive ? 'text-ink' : 'text-muted'
               }`}
             >
               {String(index + 1).padStart(2, '0')}
@@ -22,7 +22,7 @@ export function ChapterIndicator({ activeChapter }: { activeChapter: string }) {
             />
             <span
               className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 ${
-                isActive ? 'text-accent2' : 'text-faint/60'
+                isActive ? 'text-ink' : 'text-muted/60'
               }`}
             >
               {chapter.label}

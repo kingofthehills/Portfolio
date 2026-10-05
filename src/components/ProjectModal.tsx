@@ -13,7 +13,7 @@ interface ProjectModalProps {
 function DetailBlock({ label, text }: { label: string; text: string }) {
   return (
     <div>
-      <h4 className="font-mono text-xs uppercase tracking-widest text-accent">{label}</h4>
+      <h4 className="font-mono text-xs uppercase tracking-widest text-muted">{label}</h4>
       <p className="mt-2 text-balance leading-relaxed text-muted">{text}</p>
     </div>
   )
@@ -66,9 +66,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         <div className="max-h-[65vh] overflow-y-auto p-6 sm:p-10">
-          <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest text-faint">
+          <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted">
             <span>{project.category}</span>
-            <span className="h-1 w-1 rounded-full bg-faint/50" />
+            <span className="h-1 w-1 rounded-full bg-muted/40" />
             <span>{project.year}</span>
           </div>
 
@@ -83,11 +83,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           <div className="mt-8">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-accent">Key Features</h4>
+            <h4 className="font-mono text-xs uppercase tracking-widest text-muted">Key Features</h4>
             <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {project.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-muted">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent2" />
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted/70" />
                   {feature}
                 </li>
               ))}

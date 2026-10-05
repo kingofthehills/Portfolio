@@ -47,15 +47,15 @@ export function Navbar({ activeSection, onOpenPalette }: NavbarProps) {
               : 'border-transparent bg-transparent px-4 py-3.5'
           }`}
         >
-          <button
-            type="button"
+          <a
+            href="#home"
             onClick={handleLogoClick}
             data-cursor="HI"
             className="flex items-center"
-            aria-label="Logo — click for a surprise"
+            aria-label={`${personal.name} — back to top`}
           >
             <img src="/logo.png" alt={personal.name} className="h-8 w-auto" />
-          </button>
+          </a>
 
           <ul className="hidden items-center gap-1 md:flex">
             {navItems.map((navItem) => (
@@ -85,7 +85,7 @@ export function Navbar({ activeSection, onOpenPalette }: NavbarProps) {
               type="button"
               onClick={onOpenPalette}
               data-cursor="⌘K"
-              className="hidden items-center gap-1.5 rounded-full border border-border/40 px-3 py-1.5 font-mono text-[11px] text-faint transition-colors hover:text-ink lg:flex"
+              className="hidden items-center gap-1.5 rounded-full border border-border/40 px-3 py-1.5 font-mono text-[11px] text-muted transition-colors hover:text-ink lg:flex"
             >
               <span>⌘</span>K
             </button>
@@ -157,7 +157,7 @@ function MobileMenu({ activeSection, onClose }: { activeSection: string; onClose
               href={`#${navItem.id}`}
               onClick={onClose}
               className={`font-display text-4xl tracking-tight transition-colors ${
-                activeSection === navItem.id ? 'text-ink' : 'text-faint'
+                activeSection === navItem.id ? 'text-ink' : 'text-muted'
               }`}
             >
               {navItem.label}
@@ -170,7 +170,7 @@ function MobileMenu({ activeSection, onClose }: { activeSection: string; onClose
         <a href={personal.resumeUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-muted">
           Resume ↗
         </a>
-        <span className="font-mono text-xs text-faint">{personal.availability.label}</span>
+        <span className="font-mono text-xs text-muted">{personal.availability.label}</span>
       </div>
     </motion.div>
   )
